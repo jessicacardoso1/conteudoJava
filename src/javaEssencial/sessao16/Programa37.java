@@ -15,9 +15,9 @@ public class Programa37 {
 		try{
 		System.out.println("A divisao de " + num1 + "por" + num2 + "eh" + num1 / num2);
 		}catch(ArithmeticException e) {
-			System.out.println("Nao eh possivel dividir " + num1 + "por " + num2 );
+			System.out.println("Nao eh possivel dividir " + num1 + "por " + num2);
+		}finally { // é sempre executado
+			System.out.println("Continua o processo...");
 		}
 		teclado.close();
 	}
-	
-}
