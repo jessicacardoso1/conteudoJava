@@ -1,28 +1,27 @@
 package br.com.geek.sessao18;
 
-import br.com.geek.sessao11.Conta;
 
 /*
- * 
+ * Caixa de objetos genéricos
  * 
  */
 public class Caixa {
-	private Conta[] contas; //Criando um array de contas
+	private Object[] objetos; //Criando um array de contas
 	private int posicaoLivre;
 	
 	public Caixa() {
-		contas = new Conta[100]; // até 100 contas.
+		objetos = new Object[100]; // até 100 contas.
 		posicaoLivre = 0;
 	}
 	
-	private void adicionar(Conta nova) {
-		contas[posicaoLivre] = nova;
+	public void adicionar(Object nova) {
+		objetos[posicaoLivre] = nova;
 		posicaoLivre++;
 
 	}
 	
-	private Conta pegar(int posicaoInformada) {
-		return this.contas[posicaoInformada];
+	public Object pegar(int posicaoInformada) {
+		return this.objetos[posicaoInformada];
 	}
 
 }
