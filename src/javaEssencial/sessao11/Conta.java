@@ -1,4 +1,7 @@
 package br.com.geek.sessao11;
+
+import br.com.geek.sessao15.Conta;
+
 /*
  * Getters e Setters 
  * 
@@ -11,6 +14,14 @@ public class Conta {
 	private float saldo;
 	private float limite;
 	private Cliente cliente;
+	
+	public static int contador = 1;
+	
+	public Conta(String cliente) {
+		this.numero = contador;
+		this.cliente = cliente;
+		Conta.contador = Conta.contador + 1; //nao usa o this pq é estatico
+	}
 	
 	public Conta(int numero, float saldo, float limite, Cliente cliente) {
 		this.numero = numero;
@@ -42,5 +53,17 @@ public class Conta {
 
 	public float getSaldo() {
 		return this.saldo + this.limite;
+	}
+	
+	public int getNumero() {
+		return this.numero;
+	}
+	
+	public String getCliente() {
+		return this.cliente;
+	}
+	
+	public static int proximaConta() {
+		return Conta.contador;
 	}
 }
