@@ -7,11 +7,16 @@ package br.com.geek.sessao21;
 public class Celula {
 	private Object elemento; //object para deixar aberto para receber qualquer tipo de dados.
 	private Celula proximo;
+	private Celula anterior;
 	
 	public Celula(Object elemento, Celula proximo) {
 		this.elemento = elemento;
 		this.proximo = proximo;
 				
+	}
+	
+	public Celula(Object elemento) {
+		this(elemento, null);
 	}
 	
 	public Celula getProximo() {
@@ -26,4 +31,11 @@ public class Celula {
 		return this.elemento;
 	}
 	
+	public Celula getAnterior() {
+		return anterior;
+	}
+	
+	public void setAnterior(Celula anterior) {
+		this.anterior = anterior;
+	}
 }
